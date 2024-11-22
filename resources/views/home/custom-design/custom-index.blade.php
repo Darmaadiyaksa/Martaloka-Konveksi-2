@@ -16,7 +16,40 @@
 
                         @foreach ($customs as $item)
                             <div class="col-xxl-4 col-xl-4 col-lg-4 col-6 p-3">
-                                <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
+
+                                {{-- @switch($item->status_pembayaran)
+                                    {{-- @case('Dalam Transaksi')
+                                        <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
+                                    @break
+
+                                    @case('Dibayar')
+                                        <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
+                                    @break
+
+                                    @case('Belum Dibayar')
+                                        <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
+                                    @break
+
+                                    @case('Ditolak')
+                                        <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
+                                        @break
+
+                                    @case('Dibatalkan')
+                                        <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
+                                    @break
+
+                                    @case('Selesai')
+                                        <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
+                                    @break
+
+                                    @case('Diterima')
+                                        <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
+                                    @break
+
+                                    @default
+                                    <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
+                                        @endswitch --}}
+                                        <a href="{{ route('home.formPembayaranTransaksiCustom', $item->id) }}" class="text-dark">
 
                                     <div class="card border shadow-none my-2">
                                         <div class="card-body">

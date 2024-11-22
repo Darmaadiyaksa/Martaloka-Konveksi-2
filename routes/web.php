@@ -57,6 +57,8 @@ Route::middleware('auth')->group(function () {
     Route::post('pembayaran-transaksi-pembelian/{transaksi}/store', [TransaksiProdukController::class, 'storeDataTransaksi'])->name('home.storeDataTransaksi');
     Route::get('form-upload-transaksi-pembelian/{transaksi}', [TransaksiProdukController::class, 'formUploadBuktiTransaksiPembelian'])->name('home.formUploadBuktiTransaksiPembelian');
     Route::post('upload-bukti-transaksi/{transaksi}/upload-bukti', [TransaksiProdukController::class, 'uploadBuktiTransaksi'])->name('home.uploadBuktiTransaksi');
+    Route::post('transaksi/progress/{progress}', [TransaksiProdukController::class, 'getProgress'])->name('home.detailProgressTransaksi');
+
     // Route::post('detail-progress/{progress}',[TransaksiProdukController::class,'getProgress'])->name('home.getProgress');
 
 

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Notification;
 use App\Models\TransaksiProduk;
 use App\Http\Controllers\Controller;
+use App\Models\ProgressPembelian;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -233,5 +234,14 @@ class TransaksiProdukController extends Controller
         $data['transaksis'] = Transaksi::with(['detailTransaksi.produk', 'user','progress'])->where('user_id', Auth::id())->get();
         // dd($data['transaksis']);
         return view('home.pembelian-produk.transaksi', $data);
+    }
+
+
+    public function getProgress($progress)
+    {
+
+        $data = ProgressPembelian::find($progress);
+
+        return response()->json($data);
     }
 }

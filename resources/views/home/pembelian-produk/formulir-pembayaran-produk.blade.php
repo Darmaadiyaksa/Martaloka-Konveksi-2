@@ -243,10 +243,13 @@
                                                                                 {{ \Carbon\Carbon::parse($item->created_at)->isoFormat('dddd, D MMMM Y H:mm:ss') }}
                                                                                 <br>
                                                                             </li>
-                                                                            <button type="button" data-bs-toggle="modal"
-                                                                                data-bs-target="#staticBackdrop"
-                                                                                class="btn-one px-4 py-0 detailProgress"
-                                                                                data-id="{{ $item->id }}">Detail</button>
+
+                                                                            <button type="button"
+                                                                                class="btn-one detailProgress"
+                                                                                data-bs-toggle="modal"
+                                                                                data-bs-target="#detailProgressBackdrop"
+                                                                                data-id="{{ $item->id }}">Detail
+                                                                            </button>
                                                                             <hr>
                                                                         @endforeach
                                                                     @endif
@@ -276,102 +279,47 @@
         </div>
     </section>
 
-    {{-- <section class="blog-page-two">
-        <div class="container" style="margin-top: 20vh;">
-            <div class="row">
 
-                <div class="col-12">
+    <div class="modal fade" id="detailProgressBackdrop" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title fs-5" id="staticBackdropLabel">Detail progress</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
-                    <div class="blog-page-two__content">
-                        <div class="row">
-                            <div class="col-xxl-8 col-xl-8 col-lg-12 col-md-12 col-sm-12">
-
-                                <h2 class="mb-3">Transaksi anda</h2>
-                                @foreach ($transaksi->detailTransaksi as $detailTransaksi)
-                                    <div class="single-blog-style2">
-                                        <div class="single-blog-style2__img-holder">
-                                            <div class="inner">
-                                                <img src="{{ asset('produk.' . $detailTransaksi->produk->gambar_produk) }}"
-                                                    alt="">
-                                            </div>
-                                        </div>
-                                        <div class="single-blog-style2__text-holder">
-                                            <div class="top">
-                                                <div class="category-box">
-                                                    <div class="dot-box"></div>
-                                                    <p>{{ $detailTransaksi->produk->kategori->nama_kategori }}</p>
-                                                </div>
-                                            </div>
-                                            <h3 class="blog-title">
-                                                <a href="{{ route('home.detail-produk', $detailTransaksi->produk->id) }}">
-                                                    {{ $detailTransaksi->produk->nama_produk }}
-                                                </a>
-                                            </h3>
-
-                                            <div class="bottom-box">
-                                                <div class="btn-box">
-                                                    <a href="#">
-                                                        <span class="icon-right-arrow-1"></span>Deskripsi
-                                                    </a>
-                                                </div>
-                                                <div class="meta-info">
-                                                    <ul>
-                                                        <li>
-                                                            <span class="icon-user"></span>
-                                                            <a href="#">Thomas Maverick</a>
-                                                        </li>
-                                                        <li>
-                                                            <span class="icon-calendar"></span>
-                                                            <a href="#">Nov 25, 2022</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-
-
-                            </div>
-                            <div class="col-xxl-4 col-xl-4 col-lg-12 col-md-12 col-sm-12">
-
-                                <h2 class="mb-3">Detail</h2>
-                                <form action="{{ route('home.uploadBuktiTransaksi', $transaksi) }}"
-                                    enctype="multipart/form-data" class="">
-                                    @csrf
-
-                                    <div class="border p-3">
-                                        <div class="form-group">
-                                            <label class="fw-bold">Bukti Pembayaran</label>
-                                            <input type="file" name="bukti_pembayaran" required class="form-control">
-                                        </div>
-
-                                        <div class="d-gap">
-                                            <button class="btn btn-block btn-one" type="submit">Upload</button>
-
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                            </div>
-                        </div>
-
-
+                    <div class="mb-3">
+                        <label for="">Nama Proses</label>
+                        <input type="text" class="form-control" id="nama_progress" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Deskripsi Proses</label>
+                        <input type="text" class="form-control" id="deskripsi_proses" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Waktu </label>
+                        <input type="text" class="form-control" id="waktu_progress" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Gambar Proses </label>
+                        <img src="" class="img-fluid" id="gambar_proses">
                     </div>
                 </div>
-
-
-
-
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                </div>
             </div>
         </div>
-    </section> --}}
+    </div>
+
+
+
 @endsection
+
 @push('scripts')
 @endpush
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Tambahkan event listener ke tombol 'Detail' menggunakan event delegation
@@ -380,7 +328,7 @@
                 var progressId = this.getAttribute('data-id');
 
                 // Lakukan request AJAX ke route yang ditentukan
-                fetch(`/custom-design/progress/${progressId}`, {
+                fetch(`/transaksi/progress/${progressId}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -404,7 +352,7 @@
                                 second: '2-digit'
                             }).format(new Date(data.created_at));
                         document.getElementById('gambar_proses').src =
-                            `/progress_custom/${data.gambar_progress}`;
+                            `/progress_pembelian/${data.gambar_progress}`;
 
                         // Tampilkan modal setelah data diisi
 

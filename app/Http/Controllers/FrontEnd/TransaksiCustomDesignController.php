@@ -149,11 +149,11 @@ class TransaksiCustomDesignController extends Controller
     }
 
 
-    public function detailProgressCustom(ProgressCustom $progress)
-    {
+    // public function detailProgressCustom(ProgressCustom $progress)
+    // {
 
-        return view('home.custom-design.detail-progres', compact('progress'));
-    }
+    //     return view('home.custom-design.detail-progres', compact('progress'));
+    // }
 
 
 

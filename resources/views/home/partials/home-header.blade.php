@@ -168,6 +168,15 @@
                                         </li>
                                     @endauth
 
+                                    @guest
+                                        <div class="d-xxl-none d-xl-none d-lg-none">
+                                            <li> <a href="{{route('register')}}">Register</a> </li>
+                                            <li> <a href="{{route('login')}}">Login</a></li>
+                                        </div>
+                                    @endguest
+
+
+
                                 </ul>
                             </div>
                         </nav>
@@ -213,17 +222,9 @@
             </div>
             <div class="menu-outer">
                 <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+
             </div>
             <!--Social Links-->
-            <div class="social-links">
-                <ul class="clearfix">
-                    <li><a href="#"><span class="fab fa fa-facebook-square"></span></a></li>
-                    <li><a href="#"><span class="fab fa fa-twitter-square"></span></a></li>
-                    <li><a href="#"><span class="fab fa fa-pinterest-square"></span></a></li>
-                    <li><a href="#"><span class="fab fa fa-google-plus-square"></span></a></li>
-                    <li><a href="#"><span class="fab fa fa-youtube-square"></span></a></li>
-                </ul>
-            </div>
         </nav>
     </div>
     <!-- End Mobile Menu -->
