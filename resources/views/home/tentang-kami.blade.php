@@ -42,7 +42,7 @@
                         <div class="intro-style2-img-box__inner">
                             <div class="intro-style2-img-box__inner-shape float-bob-y"
                                 style="background-image: url(assets/images/shape/book.png);"></div>
-                            <img src="assets/images/orang.png" alt="">
+                            <img src="assets/images/owner1.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                             {{-- <div class="sub-title">
                                 <h5>Admission</h5>
                             </div> --}}
-                            <h2>Owner<br>I Putu Sutama</h2>
+                            <h2>Owner<br>Putu Sedanayasa</h2>
                         </div>
                         <div class="intro-style2-text-box__inner">
                             <div class="top-justify">
