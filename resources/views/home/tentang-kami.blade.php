@@ -52,7 +52,8 @@
                             {{-- <div class="sub-title">
                                 <h5>Admission</h5>
                             </div> --}}
-                            <h2>Owner<br>Putu Sedanayasa.</h2>
+                            <h2>Owner<br>Putu Sedanayasa.
+                            </h2>
                         </div>
                         <div class="intro-style2-text-box__inner">
                             <div class="top-justify">
