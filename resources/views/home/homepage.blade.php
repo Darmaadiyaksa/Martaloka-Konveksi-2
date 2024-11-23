@@ -240,82 +240,6 @@
             </div>
         </section>
 
-        {{-- <section class="academy-working-process-area">
-            <div class="container">
-                <div class="sec-title-style3 text-center">
-                    <div class="sub-title">
-                    </div>
-                    <h2 style="margin-top:-150px">Cara Memesan</h2>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="academy-working-process__content-outer">
-                            <div class="dotted-line">
-                                <img src="{{ asset('assets/images/slider/garis.png') }}" alt="">
-                            </div>
-                            <ul class="academy-working-process__content">
-                                <li>
-                                    <div class="academy-working-process-single-box">
-                                        <div class="icon">
-                                            <span class="icon-coder-1"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h6>Step 01</h6>
-                                            <h3>Visit Our Page</h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="academy-working-process-single-box">
-                                        <div class="icon">
-                                            <span class="icon-reading-1"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h6>Step 02</h6>
-                                            <h3>Choose a Course</h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="academy-working-process-single-box">
-                                        <div class="icon">
-                                            <span class="icon-credit-card-1"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h6>Step 03</h6>
-                                            <h3>Make a Payment</h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="academy-working-process-single-box">
-                                        <div class="icon">
-                                            <span class="icon-online-store-1"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h6>Step 04</h6>
-                                            <h3>Learn a Course</h3>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="academy-working-process-single-box">
-                                        <div class="icon">
-                                            <span class="icon-diploma-1"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h6>Step 06</h6>
-                                            <h3>Get Certificate</h3>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-
         <section class="academy-slogan-area">
             <div class="academy-slogan-middle-content">
                 <div class="academy-slogan-middle-content__bg"
@@ -349,7 +273,7 @@
                                     </a>
                                 </div>
                                 <div class="btns-box">
-                                    <a class="btn-one btn-one--style4 btn-wide" href="https://laporanta.tiiny.site/">
+                                    <a class="btn-one btn-one--style4 btn-wide" href="assets/pdf/panduan desain.pdf" target="PanduanDesainPDF">
                                         <span class="txt">
                                             <i class="icon-right-arrow-1"></i>
                                             Panduan Desain
@@ -378,7 +302,7 @@
                                     </a>
                                 </div>
                                 <div class="btns-box">
-                                    <a class="btn-one btn-one--style4 btn-wide" href="https://example.com">
+                                    <a class="btn-one btn-one--style4 btn-wide" href="assets/pdf/panduan desain.pdf" target="PanduanDesainPDF">
                                         <span class="txt">
                                             <i class="icon-right-arrow-1"></i>
                                             Panduan Pemesanan
